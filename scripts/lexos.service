@@ -1,0 +1,30 @@
+[Unit]
+Description=LexOS Command Center
+After=network.target
+Wants=network.target
+
+[Service]
+Type=forking
+User=user
+WorkingDirectory=/home/user/lexos-command-center
+ExecStart=/home/user/lexos-command-center/scripts/auto-deploy.sh deploy
+ExecStop=/home/user/lexos-command-center/scripts/auto-deploy.sh stop
+ExecReload=/home/user/lexos-command-center/scripts/auto-deploy.sh restart
+Restart=always
+RestartSec=10
+StandardOutput=journal
+StandardError=journal
+
+# Environment variables
+Environment=NODE_ENV=production
+Environment=PORT=3001
+Environment=HOST=0.0.0.0
+
+# Security settings
+NoNewPrivileges=true
+PrivateTmp=true
+ProtectSystem=strict
+ReadWritePaths=/home/user/lexos-command-center
+
+[Install]
+WantedBy=multi-user.target 

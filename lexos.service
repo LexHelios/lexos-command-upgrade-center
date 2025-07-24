@@ -1,0 +1,24 @@
+[Unit]
+Description=Lexos Command Center
+After=network.target
+
+[Service]
+Type=forking
+User=user
+WorkingDirectory=/home/user/lexos-combined
+ExecStart=/home/user/lexos-combined/start-production.sh
+ExecStop=/home/user/lexos-combined/stop-production.sh
+Restart=on-failure
+RestartSec=10
+
+# Environment
+Environment="NODE_ENV=production"
+Environment="PATH=/home/user/.nvm/versions/node/v22.17.1/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
+
+# Logging
+StandardOutput=journal
+StandardError=journal
+SyslogIdentifier=lexos
+
+[Install]
+WantedBy=multi-user.target

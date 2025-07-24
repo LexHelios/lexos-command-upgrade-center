@@ -1,0 +1,221 @@
+version: "3.1"
+
+nlu:
+- intent: greet
+  examples: |
+    - hey
+    - hello
+    - hi
+    - hello there
+    - good morning
+    - good evening
+    - hey there
+    - let's go
+    - hey lexos
+    - hi lexos
+    - hello lexos
+
+- intent: goodbye
+  examples: |
+    - bye
+    - goodbye
+    - see you later
+    - see you soon
+    - catch you later
+    - bye bye
+    - have a nice day
+    - gotta go
+
+- intent: affirm
+  examples: |
+    - yes
+    - y
+    - indeed
+    - of course
+    - that sounds good
+    - correct
+    - sure
+    - ok
+    - yeah
+    - yep
+
+- intent: deny
+  examples: |
+    - no
+    - n
+    - never
+    - I don't think so
+    - don't like that
+    - no way
+    - not really
+    - nope
+
+- intent: bot_challenge
+  examples: |
+    - are you a bot?
+    - are you a human?
+    - am I talking to a bot?
+    - am I talking to a human?
+    - what are you?
+    - who are you?
+
+- intent: help
+  examples: |
+    - help
+    - help me
+    - what can you do
+    - what can you help me with
+    - show me what you can do
+    - how do you work
+    - what are your features
+    - what are your capabilities
+
+- intent: start_conversation_mode
+  examples: |
+    - start conversation mode
+    - enable conversation mode
+    - turn on continuous listening
+    - keep listening
+    - activate voice conversation
+    - start voice chat
+    - begin conversation
+
+- intent: stop_conversation_mode
+  examples: |
+    - stop conversation mode
+    - end conversation mode
+    - stop listening
+    - turn off continuous listening
+    - deactivate voice conversation
+    - stop voice chat
+    - end conversation
+
+- intent: enable_auto_speak
+  examples: |
+    - enable auto speak
+    - turn on voice responses
+    - read your responses
+    - speak your answers
+    - enable text to speech
+    - turn on tts
+
+- intent: disable_auto_speak
+  examples: |
+    - disable auto speak
+    - turn off voice responses
+    - stop reading responses
+    - be quiet
+    - disable text to speech
+    - turn off tts
+
+- intent: change_voice
+  examples: |
+    - change voice to [rachel](voice_name)
+    - use [josh](voice_name) voice
+    - switch to [bella](voice_name)
+    - can you speak like [adam](voice_name)
+    - change your voice
+
+- intent: create_task
+  examples: |
+    - create a task [write documentation](task_name)
+    - add task [review code](task_name)
+    - new task [call client](task_name)
+    - remind me to [buy groceries](task_name)
+    - add [finish report](task_name) to my tasks
+
+- intent: list_tasks
+  examples: |
+    - show my tasks
+    - what are my tasks
+    - list all tasks
+    - show me what I need to do
+    - what's on my todo list
+
+- intent: complete_task
+  examples: |
+    - mark [write documentation](task_name) as done
+    - complete task [review code](task_name)
+    - I finished [call client](task_name)
+    - task [buy groceries](task_name) is done
+    - check off [finish report](task_name)
+
+- intent: browse_website
+  examples: |
+    - browse [google.com](website_url)
+    - go to [https://github.com](website_url)
+    - open [wikipedia.org](website_url)
+    - navigate to [news.ycombinator.com](website_url)
+    - show me [reddit.com](website_url)
+
+- intent: take_screenshot
+  examples: |
+    - take a screenshot
+    - capture the screen
+    - screenshot this
+    - save what's on screen
+    - grab a screenshot
+
+- intent: upload_file
+  examples: |
+    - upload a file
+    - I want to upload a document
+    - let me upload something
+    - upload file
+    - add a file
+
+- intent: search_files
+  examples: |
+    - search for [report.pdf](file_name)
+    - find file [presentation](file_name)
+    - look for [image.jpg](file_name)
+    - search my files for [budget](file_name)
+    - find [contract](file_name) document
+
+- intent: analyze_document
+  examples: |
+    - analyze this document
+    - what's in this file
+    - summarize this pdf
+    - explain this document
+    - review this file
+
+- intent: build_app
+  examples: |
+    - build a [react](app_type) app
+    - create a [python](app_type) application
+    - make a [web](app_type) app
+    - develop a [mobile](app_type) app
+    - build me a [dashboard](app_type)
+
+- intent: generate_image
+  examples: |
+    - generate an image of a sunset
+    - create a picture of a cat
+    - make an image showing a mountain
+    - draw a beach scene
+    - generate art of a spaceship
+
+- intent: create_diagram
+  examples: |
+    - create a [flowchart](diagram_type)
+    - make a [sequence](diagram_type) diagram
+    - draw a [mind map](diagram_type)
+    - generate a [gantt](diagram_type) chart
+    - show me a [class](diagram_type) diagram
+
+- intent: ask_question
+  examples: |
+    - what is machine learning
+    - how does blockchain work
+    - explain quantum computing
+    - tell me about climate change
+    - what are neural networks
+
+- intent: generate_code
+  examples: |
+    - write [python](programming_language) code for sorting
+    - generate a [javascript](programming_language) function
+    - create [java](programming_language) class
+    - show me [rust](programming_language) example
+    - write [sql](programming_language) query

@@ -1,0 +1,94 @@
+version: "3.1"
+
+stories:
+
+- story: happy path
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: help
+  - action: utter_help
+
+- story: voice conversation flow
+  steps:
+  - intent: start_conversation_mode
+  - action: action_toggle_conversation_mode
+  - action: utter_conversation_mode_started
+  - intent: stop_conversation_mode
+  - action: action_toggle_conversation_mode
+  - action: utter_conversation_mode_stopped
+
+- story: task management flow
+  steps:
+  - intent: create_task
+    entities:
+    - task_name: "write documentation"
+  - action: action_create_task
+  - intent: list_tasks
+  - action: action_list_tasks
+  - intent: complete_task
+    entities:
+    - task_name: "write documentation"
+  - action: action_complete_task
+
+- story: browse website flow
+  steps:
+  - intent: browse_website
+    entities:
+    - website_url: "github.com"
+  - action: action_browse_website
+  - intent: take_screenshot
+  - action: action_take_screenshot
+
+- story: document analysis flow
+  steps:
+  - intent: upload_file
+  - action: utter_ask_file_upload
+  - intent: analyze_document
+  - action: action_analyze_document
+
+- story: app building flow
+  steps:
+  - intent: build_app
+    entities:
+    - app_type: "react"
+  - action: action_build_app
+
+- story: multimodal generation flow
+  steps:
+  - intent: generate_image
+  - action: action_generate_image
+  - intent: create_diagram
+    entities:
+    - diagram_type: "flowchart"
+  - action: action_create_diagram
+
+- story: voice settings flow
+  steps:
+  - intent: enable_auto_speak
+  - action: action_toggle_auto_speak
+  - action: utter_auto_speak_enabled
+  - intent: change_voice
+    entities:
+    - voice_name: "josh"
+  - action: action_change_voice
+
+- story: knowledge query flow
+  steps:
+  - intent: ask_question
+  - action: action_ai_response
+  - intent: generate_code
+    entities:
+    - programming_language: "python"
+  - action: action_ai_response
+
+- story: accessibility flow
+  steps:
+  - intent: start_conversation_mode
+  - action: action_toggle_conversation_mode
+  - action: utter_conversation_mode_started
+  - intent: ask_question
+  - action: action_ai_response
+  - intent: goodbye
+  - action: utter_goodbye
+  - action: action_toggle_conversation_mode

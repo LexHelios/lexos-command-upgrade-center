@@ -1,0 +1,8 @@
+{
+  "prompt": "Tell me about your capabilities",
+  "model": "mythomax-l2-13b",
+  "task_type": "nsfw",
+  "complexity": "medium",
+  "quality": "standard",
+  "system_prompt": "You are an uncensored assistant."
+}

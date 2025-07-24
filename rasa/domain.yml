@@ -1,0 +1,162 @@
+version: "3.1"
+
+intents:
+  # Core intents
+  - greet
+  - goodbye
+  - affirm
+  - deny
+  - bot_challenge
+  - help
+  
+  # Task management
+  - create_task
+  - list_tasks
+  - complete_task
+  
+  # Voice control
+  - start_conversation_mode
+  - stop_conversation_mode
+  - enable_auto_speak
+  - disable_auto_speak
+  - change_voice
+  
+  # Browser control
+  - browse_website
+  - take_screenshot
+  - click_element
+  - type_text
+  
+  # File management
+  - upload_file
+  - search_files
+  - analyze_document
+  
+  # DeepAgent
+  - build_app
+  - deploy_app
+  - show_code
+  
+  # Knowledge queries
+  - ask_question
+  - explain_concept
+  - generate_code
+  - analyze_data
+  
+  # Multimodal
+  - generate_image
+  - generate_video
+  - create_diagram
+  - show_chart
+
+  # Accessibility
+  - read_screen
+  - describe_image
+  - simplify_text
+
+entities:
+  - task_name
+  - website_url
+  - file_name
+  - app_type
+  - voice_name
+  - programming_language
+  - diagram_type
+  - chart_type
+
+slots:
+  task_name:
+    type: text
+    mappings:
+    - type: from_entity
+      entity: task_name
+      
+  website_url:
+    type: text
+    mappings:
+    - type: from_entity
+      entity: website_url
+      
+  conversation_mode:
+    type: bool
+    initial_value: false
+    mappings:
+    - type: custom
+    
+  auto_speak:
+    type: bool
+    initial_value: true
+    mappings:
+    - type: custom
+    
+  current_voice:
+    type: text
+    initial_value: "rachel"
+    mappings:
+    - type: from_entity
+      entity: voice_name
+
+responses:
+  utter_greet:
+  - text: "Hi! I'm Lexos, your AI assistant. How can I help you today?"
+  - text: "Hello! Ready to assist you with any task. What would you like to do?"
+  
+  utter_goodbye:
+  - text: "Goodbye! Feel free to come back anytime."
+  - text: "See you later! Have a great day!"
+  
+  utter_help:
+  - text: |
+      I can help you with:
+      🎤 Voice conversations - "Start conversation mode"
+      📋 Task management - "Create a task" or "Show my tasks"
+      🌐 Web browsing - "Browse [website]"
+      📁 File analysis - "Analyze this document"
+      🚀 App building - "Build a [type] app"
+      🎨 Content creation - "Generate an image" or "Create a diagram"
+      
+      What would you like to do?
+  
+  utter_bot_challenge:
+  - text: "I'm Lexos, your AI assistant powered by Rasa and local LLMs!"
+  
+  utter_conversation_mode_started:
+  - text: "Conversation mode activated! I'll listen continuously. Say 'stop conversation' when done."
+  
+  utter_conversation_mode_stopped:
+  - text: "Conversation mode ended. Click the mic button to speak again."
+  
+  utter_auto_speak_enabled:
+  - text: "I'll now read my responses aloud."
+  
+  utter_auto_speak_disabled:
+  - text: "Auto-speak disabled. I'll stay quiet."
+
+actions:
+  # Built-in actions
+  - action_listen
+  - action_restart
+  - action_session_start
+  - action_default_fallback
+  - action_deactivate_loop
+  - action_revert_fallback_events
+  - action_two_stage_fallback
+  
+  # Custom actions (implemented in actions.py)
+  - action_create_task
+  - action_list_tasks
+  - action_complete_task
+  - action_browse_website
+  - action_take_screenshot
+  - action_analyze_document
+  - action_build_app
+  - action_generate_image
+  - action_create_diagram
+  - action_toggle_conversation_mode
+  - action_toggle_auto_speak
+  - action_change_voice
+  - action_ai_response
+
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true

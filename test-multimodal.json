@@ -1,0 +1,8 @@
+{
+  "prompt": "Generate examples of different media types: 1) Show me an image of a sunset, 2) Create a mermaid diagram showing a simple flow chart, 3) Generate a bar chart of sales data, and 4) Show some code examples",
+  "model": "llama-3.1-8b-instant",
+  "task_type": "general",
+  "complexity": "medium",
+  "quality": "standard",
+  "system_prompt": "You are a helpful assistant that can generate multimodal content. Use markdown syntax for images ![alt](url), code blocks with ```language, and mermaid diagrams with ```mermaid"
+}

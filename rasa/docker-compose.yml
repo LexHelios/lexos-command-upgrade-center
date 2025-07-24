@@ -1,0 +1,46 @@
+version: '3.8'
+
+services:
+  rasa:
+    image: rasa/rasa:3.6.0-full
+    ports:
+      - "5005:5005"
+    volumes:
+      - ./:/app
+    command: >
+      run
+      --enable-api
+      --cors "*"
+      --debug
+      --port 5005
+    environment:
+      - RASA_TELEMETRY_ENABLED=false
+    networks:
+      - rasa-network
+
+  rasa-actions:
+    build:
+      context: .
+      dockerfile: Dockerfile.actions
+    ports:
+      - "5055:5055"
+    volumes:
+      - ./actions:/app/actions
+    environment:
+      - RASA_SDK_ACTIONS_MODULE=actions
+      - LEXOS_API_URL=http://host.docker.internal:3000
+    networks:
+      - rasa-network
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+
+  duckling:
+    image: rasa/duckling:latest
+    ports:
+      - "8000:8000"
+    networks:
+      - rasa-network
+
+networks:
+  rasa-network:
+    driver: bridge

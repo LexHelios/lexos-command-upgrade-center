@@ -1,0 +1,21 @@
+{
+  "appId": "app.lovable.600496c2cca4427ca7045241b30a942d",
+  "appName": "lexos-command-center",
+  "webDir": "dist",
+  "bundledWebRuntime": false,
+  "server": {
+    "url": "https://600496c2-cca4-427c-a704-5241b30a942d.lovableproject.com?forceHideBadge=true",
+    "cleartext": true
+  },
+  "plugins": {
+    "SplashScreen": {
+      "launchShowDuration": 2000,
+      "backgroundColor": "#0B1426",
+      "showSpinner": false
+    },
+    "StatusBar": {
+      "style": "DARK",
+      "backgroundColor": "#0B1426"
+    }
+  }
+}

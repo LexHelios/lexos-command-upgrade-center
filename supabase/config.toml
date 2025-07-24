@@ -1,0 +1,8 @@
+project_id = "hgnnbzlvqzmtnrzhicxr"
+
+[functions.smart-ai-router]
+verify_jwt = true
+
+[functions.h100-proxy]
+verify_jwt = true
+

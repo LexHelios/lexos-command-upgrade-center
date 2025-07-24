@@ -1,0 +1,6 @@
+{
+  "prompt": "Show me examples of all media types:\n\n1. Text: Write a haiku about programming\n\n2. Code: Show me a Python function to calculate fibonacci\n\n3. Image: ![A beautiful landscape](https://picsum.photos/800/400)\n\n4. Mermaid diagram:\n```mermaid\ngraph TD\n    A[User Request] --> B{Media Type}\n    B -->|Text| C[Render Text]\n    B -->|Image| D[Show Image]\n    B -->|Video| E[Play Video]\n    B -->|Code| F[Syntax Highlight]\n```\n\n5. Chart:\n```chart\n{\n  \"type\": \"bar\",\n  \"data\": {\n    \"labels\": [\"Images\", \"Videos\", \"Text\", \"Code\", \"Charts\"],\n    \"datasets\": [{\n      \"label\": \"Media Support\",\n      \"data\": [100, 90, 100, 100, 95],\n      \"backgroundColor\": [\"#FF6384\", \"#36A2EB\", \"#FFCE56\", \"#4BC0C0\", \"#9966FF\"]\n    }]\n  }\n}\n```",
+  "task_type": "general",
+  "complexity": "medium",
+  "quality": "standard"
+}

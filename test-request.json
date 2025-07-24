@@ -1,0 +1,5 @@
+{
+  "prompt": "Hello! Tell me about yourself in 2-3 sentences.",
+  "model": "llama-3.1-8b-instant",
+  "system_prompt": "You are a helpful assistant."
+}

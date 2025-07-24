@@ -1,0 +1,16 @@
+FROM rasa/rasa-sdk:3.6.0
+
+# Switch to root to install dependencies
+USER root
+
+# Install additional Python packages
+RUN pip install --no-cache-dir requests
+
+# Copy actions code
+COPY ./actions /app/actions
+
+# Switch back to non-root user
+USER 1001
+
+# Start action server
+CMD ["start", "--actions", "actions", "--port", "5055"]

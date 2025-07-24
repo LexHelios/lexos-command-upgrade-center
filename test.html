@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>LexOS Test</title>
+</head>
+<body>
+    <h1>Testing LexOS</h1>
+    <iframe src="http://localhost:3001" width="100%" height="600" style="border: 1px solid #ccc;"></iframe>
+    
+    <script>
+        // Try to fetch the page and log any errors
+        fetch('http://localhost:3001')
+            .then(response => response.text())
+            .then(html => {
+                console.log('HTML loaded successfully');
+                console.log('HTML length:', html.length);
+            })
+            .catch(error => {
+                console.error('Error loading page:', error);
+            });
+    </script>
+</body>
+</html>
